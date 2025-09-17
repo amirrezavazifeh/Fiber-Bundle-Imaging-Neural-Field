@@ -338,7 +338,7 @@ class VideoFitting(Dataset):
         # Load and sort the frame files from the specified path
 
         # For 2D Scene Dataset
-        frames = os.listdir(self.path)
+        frames = [f for f in os.listdir(self.path) if f.endswith('.png')]
         frames = sorted(frames, key=lambda x: int(x.split('_')[0]))
         print(frames)
         video = []
