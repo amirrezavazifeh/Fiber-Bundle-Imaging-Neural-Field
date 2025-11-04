@@ -56,8 +56,8 @@ Both networks are multilayer perceptrons (MLPs). To mitigate spectral bias, we a
 1. **Prepare your data**: Place burst frames in a folder, named sequentially as `0_000.png`, `1_000.png`, ..., `{N-1}_000.png`, where $N$ is the number of frames.
 2. Open and run `main.ipynb` in Google Colab or locally (A100 GPU recommended).  
 3. Select:
-   - Motion model (`homography`, `flow`, `flow_no_tv`, or `none`)
-   - Positional encoding type (`Fourier`, `hash`, `NeRF`, `SIREN`, or `none`)
+   - Motion model (`Homography`, `Optical Flow`, `Optical Flow w/o TV loss`, or `None`)
+   - Positional encoding type (`Fourier`, `Hash`, `NeRF`, `SIREN`, or `None`)
    - Key hyperparameters (e.g., encoding scale $\sigma$)
 
 Ablation scripts for motion, encoding, and hyperparameter studies are also provided.
