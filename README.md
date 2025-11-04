@@ -11,7 +11,7 @@ This repository implements an **unsupervised test-time training method** for rem
 
 Our method jointly optimizes:
 - A **motion network** that models frame-to-frame transformations.  
-- A **scene representation network** that reconstructs a super-resolved canonical view using coordinate-based implicit representation and positional encoding.
+- A **scene representation network** that reconstructs a super-resolved canonical view observed in different frames using coordinate-based implicit representation and positional encoding.
 
 ---
 
