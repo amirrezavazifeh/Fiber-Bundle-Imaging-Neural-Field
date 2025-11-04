@@ -8,6 +8,11 @@
 
 ---
 
+<!-- MathJax for LaTeX rendering -->
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 ## Overview
 
 Fiber-optic imaging systems enable minimally invasive **in-vivo** imaging but suffer from sampling artifacts (e.g., honeycomb patterns) due to discrete and non-uniform fiber layouts.  
@@ -22,19 +27,29 @@ Our method jointly optimizes:
 ## Method Summary
 
 Each input frame is modeled as a warped observation of a canonical scene.  
-For each pixel coordinate (x, y, t):
+For each pixel coordinate \((x, y, t)\):
 
-<p align="center">
-Ĩ(x, y, t) = f<sub>θ</sub>( γ( T<sub>g<sub>ϕ</sub></sub>(x, y, t) ) )
-</p>
+\[
+\hat{I}(x, y, t) = f_\theta\bigl(\gamma(T_{g_\phi}(x, y, t))\bigr)
+\]
 
 where:
-- <code>T<sub>g<sub>ϕ</sub></sub></code>: motion transformation (e.g., homography or optical flow)  
-- <code>γ(·)</code>: positional encoding  
-- <code>f<sub>θ</sub></code>: scene representation network  
-- Both networks are trained jointly using an L<sub>2</sub> reconstruction loss.
 
+- \(T_{g_\phi}\): motion transformation (e.g., homography or optical flow)  
+- \(\gamma(\cdot)\): positional encoding  
+- \(f_\theta\): scene representation network  
+- Both networks are trained jointly using an \(L_2\) reconstruction loss.
 
+The optimization minimizes:
+
+\[
+\mathcal{L} = \sum_{x, y, t} \left\| \hat{I}(x, y, t) - I(x, y, t) \right\|^2
+\]
+
+Both networks are multilayer perceptrons (MLPs).  
+To mitigate spectral bias, we apply a positional encoding \(\gamma(\cdot)\) to spatial coordinates before mapping to RGB values.
+
+---
 
 ## Repository Structure
 
