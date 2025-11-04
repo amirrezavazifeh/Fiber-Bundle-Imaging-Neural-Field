@@ -17,8 +17,7 @@ Our method jointly optimizes:
 ---
 
 ## Method Summary
-Each input frame is modeled as a warped observation of a canonical scene.  
-For each pixel coordinate $(x, y, t)$:
+Each input frame is modeled as a warped observation of a canonical scene. For each pixel coordinate $(x, y, t)$:
 
 $$
 \hat{I}(x, y, t) = f_\theta\left(\gamma\left(T_{g_\phi}(x, y, t)\right)\right)
