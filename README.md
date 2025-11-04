@@ -32,8 +32,7 @@ The optimization minimizes:
 
 $$\mathcal{L} = \sum_{x, y, t} \left\| \hat{I}(x, y, t) - I(x, y, t) \right\|^2$$
 
-Both networks are multilayer perceptrons (MLPs).  
-To mitigate spectral bias, we apply a positional encoding $\gamma(\cdot)$ to spatial coordinates before mapping to RGB values.
+Both networks are multilayer perceptrons (MLPs). To mitigate spectral bias, we apply a positional encoding $\gamma(\cdot)$ to spatial coordinates before mapping to RGB values.
 
 ---
 
@@ -47,8 +46,8 @@ To mitigate spectral bias, we apply a positional encoding $\gamma(\cdot)$ to spa
 1. Place burst frames in a folder, named sequentially
 2. Open and run `main.ipynb` in Google Colab or locally (A100 GPU recommended).  
 3. Select:
-   - Motion model (`homography`, `flow`, or `none`)
-   - Positional encoding type (`Fourier`, `hash`, etc.)
+   - Motion model (`homography`, `flow`, `flow_no_tv`, or `none`)
+   - Positional encoding type (`Fourier`, `hash`, `NeRF`, `SIREN`, or `none`)
    - Key hyperparameters (e.g., encoding scale $\sigma$)
 
 Ablation scripts for motion, encoding, and hyperparameter studies are also provided.
