@@ -24,13 +24,16 @@ Our method jointly optimizes:
 Each input frame is modeled as a warped observation of a canonical scene.  
 For each pixel coordinate (x, y, t):
 
-`Ĩ(x, y, t) = f_θ( γ( T_{g_ϕ}(x, y, t) ) )`
+<p align="center">
+Ĩ(x, y, t) = f<sub>θ</sub>( γ( T<sub>g<sub>ϕ</sub></sub>(x, y, t) ) )
+</p>
 
 where:
-- `T_{g_ϕ}` – motion transformation (e.g., homography or optical flow)  
-- `γ(·)` – positional encoding  
-- `f_θ` – scene representation network  
-- Both networks are trained jointly using an L2 reconstruction loss.
+- <code>T<sub>g<sub>ϕ</sub></sub></code>: motion transformation (e.g., homography or optical flow)  
+- <code>γ(·)</code>: positional encoding  
+- <code>f<sub>θ</sub></code>: scene representation network  
+- Both networks are trained jointly using an L<sub>2</sub> reconstruction loss.
+
 
 
 ## Repository Structure
